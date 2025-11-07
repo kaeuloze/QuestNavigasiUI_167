@@ -37,8 +37,17 @@ fun DataApp(navController: NavHostController = rememberNavController()
                     }
                 )
             }
+            composable(route = Navigasi.Detail.name){
+                TampilData(
+                    onBackBtnClick = {
+                        cancelAndBackToFormulir(navController)
+                    }
+                )
+            }
         }
     }
 }
+
+
 
 
