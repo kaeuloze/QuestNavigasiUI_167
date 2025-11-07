@@ -1,8 +1,18 @@
 package com.example.navigasiku
 
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.compose.ui.Modifier
+import com.example.navigasiku.view.FormIsian
+import com.example.navigasiku.view.TampilData
+
+
 
 enum class Navigasi {
     Formulirku,
@@ -11,4 +21,22 @@ enum class Navigasi {
 
 @Composable
 fun DataApp(navController: NavHostController = rememberNavController()
-){}
+) {
+    Scaffold { isiRuang ->
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.Formulirku.name,
+
+            modifier = Modifier.padding(isiRuang)
+        ) {
+            composable(route = Navigasi.Formulirku.name) {
+                FormIsian(
+                    //pilihanJK = JenisK.map { id -> konteks.resources.getString(id) },
+                    OnSubmitBtnClick = {
+                        navController.navigate(Navigasi.Detail.name)
+                    }
+                )
+            }
+        }
+    }
+}
