@@ -30,8 +30,8 @@ fun TampilData(
     onBackBtnClick: ()->Unit
 ){
     val items = listOf(
-        Pair(stringResource(id = R.string.nama_lengkap), "Contoh Nama"),
-        Pair(stringResource(id = R.string.jenis_kelamin), "Lainnya"),
+        Pair(stringResource(id = R.string.nama_lengkap), "Mariska Esa"),
+        Pair(stringResource(id = R.string.jenis_kelamin), "Perempuan"),
         Pair(stringResource(id = R.string.alamat), "Yogyakarta")
     )
     Scaffold (modifier = Modifier,
@@ -47,7 +47,7 @@ fun TampilData(
         ) {
             Column(
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
-                verticalArrangement = Arrangement.spacedBy(dimensionResource(id = 10.dp))
+                verticalArrangement = Arrangement.spacedBy(dimensionResource(id =  R.dimen.padding_small))
             ) {
                 items.forEach { item ->
                     Column {
