@@ -40,3 +40,5 @@ fun DataApp(navController: NavHostController = rememberNavController()
         }
     }
 }
+
+
